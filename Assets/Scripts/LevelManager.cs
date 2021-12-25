@@ -37,5 +37,6 @@ public class LevelManager : MonoBehaviour
         playerController.instance.gameObject.SetActive(true);
         playerController.instance.transform.position = CheckpointController.instance.spawnPoint;
         PlayerHealthController.instance.currentHealth = PlayerHealthController.instance.maxHealth;
+        UIController.instance.UpdateHealthDisplay();
     }
 }
