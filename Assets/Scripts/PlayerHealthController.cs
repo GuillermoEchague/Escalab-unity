@@ -44,7 +44,7 @@ public class PlayerHealthController : MonoBehaviour
         playerController.instance.anim.SetTrigger("Hurt");
         if(currentHealth <= 0) {
             currentHealth = 0;
-            gameObject.SetActive(false);
+            LevelManager.instance.RespawnPlayer();
         }
         else {
             invincibleCounter = invincibleLength;
