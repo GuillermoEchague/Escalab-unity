@@ -28,7 +28,7 @@ public class Hurtbox : MonoBehaviour
                 Instantiate(collectible, other.transform.position, other.transform.rotation);
             }
 
-            // AudioManager.instance.PlaySFX(3);
+             AudioManager.instance.PlaySFX(3);
         }
     }
 }

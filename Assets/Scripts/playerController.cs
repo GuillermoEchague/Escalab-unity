@@ -29,6 +29,8 @@ public class playerController : MonoBehaviour
     public float KnockBackLength, KnockBackForce;
     public float KnockBackCounter;
 
+    public bool stopInput;
+
     private void Awake() {
         instance = this;
     }
@@ -43,6 +45,9 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!PauseMenu.instance.isPaused && !stopInput)
+        {
+
         if(KnockBackCounter <= 0) {
             
         theRB.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), theRB.velocity.y);
@@ -60,13 +65,14 @@ public class playerController : MonoBehaviour
             if(isGrounded)
             {
                 theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                  // Debug.Log("Jump!2");
+                   AudioManager.instance.PlaySFX(10);
             } 
             else 
             {
                     if(canDoubleJump)
                     {
                        theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                        AudioManager.instance.PlaySFX(10);
                        canDoubleJump = false;
                         // Debug.Log("Jump!3");
                     }
@@ -84,9 +90,11 @@ public class playerController : MonoBehaviour
            KnockBackCounter -= Time.deltaTime;
            if(!theSR.flipX){
                theRB.velocity = new Vector2(-KnockBackForce, theRB.velocity.y);
+           
            } else {
                 theRB.velocity = new Vector2(KnockBackForce, theRB.velocity.y);
            }
+        }
         }
 
         anim.SetFloat("moveSpeed", Mathf.Abs(theRB.velocity.x));
