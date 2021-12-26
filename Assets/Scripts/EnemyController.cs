@@ -17,7 +17,6 @@ public class EnemyController : MonoBehaviour
     public float moveTime, waitTime;
     private float moveCount, waitCount;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +66,8 @@ public class EnemyController : MonoBehaviour
                 waitCount = Random.Range(waitTime * .75f, waitTime * 1.25f);
             }
 
-             //anim.SetBool("isMoving", true);
+             anim.SetBool("isMoving", true);
+
         } else if(waitCount > 0)
         {
             waitCount -= Time.deltaTime;
@@ -77,7 +77,8 @@ public class EnemyController : MonoBehaviour
             {
                 moveCount = Random.Range(moveTime * .75f, waitTime * 1.25f);
             }
-            //  anim.SetBool("isMoving", false);
+
+             anim.SetBool("isMoving", false);
         }
         
     }
