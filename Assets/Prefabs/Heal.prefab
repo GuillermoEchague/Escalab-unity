@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d4509491fd770419024e83b7a0e260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGem: 0
-  isHeal: 1
-  pickupEffect: {fileID: 0}
+  isGem: 1
+  isHeal: 0
+  pickupEffect: {fileID: 5688178889904553373, guid: 267d8ef9cedef814ca58f9976d4cde01,
+    type: 3}

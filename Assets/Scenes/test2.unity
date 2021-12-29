@@ -5813,6 +5813,11 @@ PrefabInstance:
       propertyPath: Checkpoints.Array.data[2]
       value: 
       objectReference: {fileID: 635296693}
+    - target: {fileID: 6115446541020809044, guid: 596124c6b48c3cb48bd0e3304d347329,
+        type: 3}
+      propertyPath: levelToLoad
+      value: LevelSelect
+      objectReference: {fileID: 0}
     - target: {fileID: 6115446541341108435, guid: 596124c6b48c3cb48bd0e3304d347329,
         type: 3}
       propertyPath: m_LocalPosition.z

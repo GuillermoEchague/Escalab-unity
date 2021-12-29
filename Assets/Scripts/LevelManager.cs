@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public float waitToRespawn;
 
     public int gemsCollected;
+    public float timeInLevel;
 
     public string levelToLoad;
 
@@ -20,13 +21,13 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        
+        timeInLevel = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timeInLevel += Time.deltaTime;
     }
 
     public void RespawnPlayer()
@@ -68,27 +69,27 @@ public class LevelManager : MonoBehaviour
 
         yield return new WaitForSeconds((1f / UIController.instance.fadeSpeed) + .25f);
 
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_unlocked", 1);
         SceneManager.LoadScene(levelToLoad);
-        // PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_unlocked", 1);
-        // PlayerPrefs.SetString("CurrentLevel", SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetString("CurrentLevel", SceneManager.GetActiveScene().name);
 
-        // if(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name + "_gems"))
-        // {
-        //     if(gemsCollected > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "_gems", gemsCollected))
-        //     {
-        //         PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_gems", gemsCollected);
-        //     }
-        // }
+        if(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name + "_gems"))
+        {
+            if(gemsCollected > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "_gems", gemsCollected))
+            {
+                PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_gems", gemsCollected);
+            }
+        }
 
-        // if (PlayerPrefs.HasKey(SceneManager.GetActiveScene().name + "_time"))
-        // {
-        //     if(timeInLevel < PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "_time", timeInLevel))
-        //     {
-        //         PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name + "_time", timeInLevel);
-        //     }
-        // }
+        if (PlayerPrefs.HasKey(SceneManager.GetActiveScene().name + "_time"))
+        {
+            if(timeInLevel < PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "_time", timeInLevel))
+            {
+                PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name + "_time", timeInLevel);
+            }
+        }
             
 
-        // SceneManager.LoadScene(levelToLoad);
+        SceneManager.LoadScene(levelToLoad);
     }
 }
