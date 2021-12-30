@@ -157,11 +157,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7.5
   jumpForce: 5
+  bounceForce: 0
   theRB: {fileID: 5396088226996241654}
+  anim: {fileID: 0}
   groundCheckpoint: {fileID: 5396088228556790291}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
+  KnockBackLength: 0
+  KnockBackForce: 0
+  KnockBackCounter: 0
+  stopInput: 0
 --- !u!1 &5396088228556790288
 GameObject:
   m_ObjectHideFlags: 0
