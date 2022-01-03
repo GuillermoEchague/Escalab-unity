@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 6115446540388584113}
   - component: {fileID: 6115446540388584115}
   - component: {fileID: 6115446540388584112}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,6 +647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitToRespawn: 2
   gemsCollected: 0
+  timeInLevel: 0
   levelToLoad: test
 --- !u!1 &6115446541082876894
 GameObject:
@@ -1492,6 +1493,16 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2178809409823733060}
+    - target: {fileID: 375347314598347850, guid: 31085bfb28962c342be45f7415d47b01,
+        type: 3}
+      propertyPath: maxHeight
+      value: 20.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 375347314598347850, guid: 31085bfb28962c342be45f7415d47b01,
+        type: 3}
+      propertyPath: minHeight
+      value: -100.5
+      objectReference: {fileID: 0}
     - target: {fileID: 375347314598347850, guid: 31085bfb28962c342be45f7415d47b01,
         type: 3}
       propertyPath: farBackground
